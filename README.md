@@ -1,4 +1,4 @@
-****Crypto-sentiment | ISI-Assignment
+Crypto-sentiment | ISI-Assignment
 
 This project deals with a high level sentiment analysis of text messages from crypto.com channel in the telegram application
 The date range of these messages is from 1st May to 15th May, 2021
