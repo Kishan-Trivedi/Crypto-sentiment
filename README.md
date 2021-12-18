@@ -18,6 +18,6 @@ In this project, nltk is used for filtering english words and textblob is used f
 
 Results:
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Sentiment-Analysis](/Crypto-sentiment/Crypto-plot.png?raw=true "Sentiment-Analysis")
 
 The resultant graph shows us that the sentiment during this period was mostly neutral, as the crypto market was highly volatile during this period. So the average positive sentiment and average negative sentiment was similar.
