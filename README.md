@@ -1,4 +1,4 @@
-# Crypto-sentiment | ISI-Assignment
+# Telegram Crypto.com | Sentiment Analysis
 
 This project deals with a high level sentiment analysis of text messages from crypto.com channel in the telegram application The date range of these messages is from 1st May to 15th May, 2021
 
@@ -18,6 +18,6 @@ In this project, nltk is used for filtering english words and textblob is used f
 
 Results:
 
-![Alt text](Crypto-plot.png "Sentiment-Analysis")
+![Sentiment-Analysis](Crypto-plot.png "Sentiment-Analysis")
 
 The resultant graph shows us that the sentiment during this period was mostly neutral, as the crypto market was highly volatile during this period. So the average positive sentiment and average negative sentiment was similar.
