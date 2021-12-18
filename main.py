@@ -1,14 +1,17 @@
-import nltk
 import json
 import re
-import plotly.graph_objects as go
-from nltk.corpus import stopwords
-from textblob import TextBlob
 from collections import defaultdict
 from statistics import mean
-from plotly.subplots import make_subplots
+
+import nltk
+import plotly.graph_objects as go
+import tqdm
+from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
+from plotly.subplots import make_subplots
+from textblob import TextBlob
+from tqdm import tqdm
 
 nltk.download('words')
 nltk.download('stopwords')
@@ -38,7 +41,7 @@ def read_telegram_file(path):
     data_dict = defaultdict(list)
     with open(path, "r", encoding="utf-8") as read_file:
         data = json.load(read_file)
-        for message in data['messages']:
+        for message in tqdm(data['messages'], desc='Reading the telegram file'):
             message_date = message['date'][0:10]
             text_message = message['text']
             if type(text_message) is list:
@@ -89,12 +92,12 @@ if __name__ == "__main__":
     number_of_messages = defaultdict(int)
     telegram_data = read_telegram_file("/Users/kishantrivedi/Downloads/result.json")
 
-    for date, list_of_messages in telegram_data.items():
+    for date, list_of_messages in tqdm(telegram_data.items(), desc='Filtering english messages'):
         for sentence in list_of_messages:
             if 'DOGE' in sentence or 'SHIB' in sentence or 'doge' in sentence or 'shib' in sentence:
                 filtered_messages[date].append(TextBlob(filter_english_words(sentence)).sentiment[0])
 
-    for date, list_sentiment in filtered_messages.items():
+    for date, list_sentiment in tqdm(filtered_messages.items(), desc='Plotting the graph'):
         sentiment_dict[date] = mean(list_sentiment)
         number_of_messages[date] = len(list_sentiment)
 
