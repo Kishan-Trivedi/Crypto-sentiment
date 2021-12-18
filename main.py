@@ -90,7 +90,7 @@ if __name__ == "__main__":
     filtered_messages = defaultdict(list)
     sentiment_dict = defaultdict(float)
     number_of_messages = defaultdict(int)
-    telegram_data = read_telegram_file("/Users/kishantrivedi/Downloads/result.json")
+    telegram_data = read_telegram_file("result.json")
 
     for date, list_of_messages in tqdm(telegram_data.items(), desc='Filtering english messages'):
         for sentence in list_of_messages:
