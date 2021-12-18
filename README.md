@@ -4,6 +4,8 @@ This project deals with a high level sentiment analysis of text messages from cr
 
 ## Running the project:
 
+Create a python virtual environment
+
 Clone this repository and install the required packages by using the following command.
 ```sh
 pip install -r requirements.txt
